@@ -13,7 +13,8 @@ import (
 )
 
 func main() {
-	fmt.Println(GenerateToken("gary"))
+	token := GenerateToken("gary")
+	fmt.Println("token",token,"len:",len(token))
 }
 
 var incrCounter uint64

@@ -1,13 +1,21 @@
 package main
 
 import (
+	"encoding/base64"
 	"encoding/hex"
+	"fmt"
 	"math/big"
 )
 
 func main() {
-	
-}
+	bs := []byte{}
+	for i := 0; i < 16; i++ {
+		if i == 0 {
+			bs = append(bs, byte(1<<7)) 
+		}else{
+			bs = append(bs, byte(0))
+		}
+	}}
 func getHashInt(hashBytes []byte) uint64 {
 	hexSha1 := hex.EncodeToString(hashBytes[:])
 	// Integer base16 conversion
