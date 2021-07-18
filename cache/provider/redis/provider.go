@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"strings"
-	"themis/component/cache"
+	"go-example/cache"
 	"time"
 
 	"github.com/go-redis/redis/v8"
