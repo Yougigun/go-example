@@ -9,6 +9,7 @@ import (
 	"github.com/fsnotify/fsnotify"
 )
 
+
 func main() {
 	filename := "./test"
 	watcher, err := fsnotify.NewWatcher()

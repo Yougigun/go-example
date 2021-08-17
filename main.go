@@ -1,8 +1,9 @@
 package main
+import (
 
-package main
+)
 
 func main() {
-	
+	arr:= make([]int,0,5)
+	arr[0] = 1 
 }
-
