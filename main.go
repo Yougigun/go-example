@@ -1,9 +1,14 @@
 package main
-import (
 
+import (
+	"fmt"
+	"time"
 )
 
 func main() {
-	arr:= make([]int,0,5)
-	arr[0] = 1 
+
+	c := make(<-chan int,1)
+	var c1 chan<- int
+	c1 = c
+	fmt.Println(c1)
 }
