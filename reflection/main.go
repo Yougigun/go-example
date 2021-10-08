@@ -23,4 +23,8 @@ func main() {
 	fmt.Println("interface's dynamic type:",tp)
 	fmt.Println("interface's dynamic type's kind:",kd)
 	fmt.Println("interface's dynamic type's kind is int?:",kd == reflect.Ptr)
+
+	// 通過 reflect.TypeOf 方法, 我們可以獲取一個變量的類型訊息
 }
+
+
