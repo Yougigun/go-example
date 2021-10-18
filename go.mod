@@ -3,6 +3,7 @@ module go-example
 go 1.16
 
 require (
+	github.com/Knetic/govaluate v3.0.1-0.20171022003610-9aa49832a739+incompatible // indirect
 	github.com/casbin/casbin/v2 v2.37.0 // indirect
 	github.com/casbin/gorm-adapter/v3 v3.4.0 // indirect
 	github.com/fsnotify/fsnotify v1.4.9
