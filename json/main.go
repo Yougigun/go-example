@@ -12,7 +12,9 @@ type People struct{
 type Doctor struct{
 	People
 	Career string `json:"career"`
-	Name string `json:"name"`
+	Str []string `json:"str"`
+	A map[int]string `json:"A"`
+	B string `json:"B"`
 }
 
 func main() {
@@ -24,6 +26,7 @@ func main() {
 	d := Doctor{
 		People: People{Name: "gary"},
 		Career: "doctor",
+		A:map[int]string{},
 	}
 	bs,err := json.Marshal(d)
 	fmt.Println(string(bs))
@@ -31,4 +34,6 @@ func main() {
 	d2 := Doctor{}
 	err = json.Unmarshal(bs,&d2)
 	fmt.Printf("%+v, err: %v\n",d2,err)
+
+
 }

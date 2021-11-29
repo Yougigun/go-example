@@ -1,29 +1,18 @@
 package main
 
 import (
-	"sync"
+	"fmt"
+	"io/ioutil"
+	"net/http"
+	"runtime"
 )
 
-type app struct{
-	c string
-}
-
-var wg sync.WaitGroup
 func main() {
-	m := map[string]app{}
-	wg.Add(10)
-	for i := 0; i < 10; i++ {
-		go writeMap(m)
-	}
-	wg.Wait()
-}
-
-func writeMap (c map[string]app) {
-	defer wg.Done()
-	// json := jsoniter.ConfigCompatibleWithStandardLibrary
-	for i := 0; i < 10000; i++ {
-		// a := c["a"]
-		// a.c = "xxx"
-		c["a"] = app{}
-	}
+    num := 6
+    for index :=0; index < num; index++ {
+        resp, _:= http.Get("https://www.binance.com")
+        _, _ = ioutil.ReadAll(resp.Body)
+		resp.Body.Close()
+		fmt.Printf("goroutine num = %d\n", runtime.NumGoroutine())
+    }
 }
