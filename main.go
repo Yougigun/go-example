@@ -1,18 +1,22 @@
 package main
 
-import (
-	"fmt"
-	"io/ioutil"
-	"net/http"
-	"runtime"
-)
+import "fmt"
+
+// "fmt"
+// "regexp"
 
 func main() {
-    num := 6
-    for index :=0; index < num; index++ {
-        resp, _:= http.Get("https://www.binance.com")
-        _, _ = ioutil.ReadAll(resp.Body)
-		resp.Body.Close()
-		fmt.Printf("goroutine num = %d\n", runtime.NumGoroutine())
-    }
+    type A interface{}
+	var a map[int]interface{} = map[int]interface{}{}
+	var aa A = a
+	Aint,ok:= aa.(map[string]interface{})
+	
+	fmt.Println(Aint==nil,ok)
+	
+}
+
+func test()(int){
+	var a interface{}
+	b:= a.(int)
+	return b
 }
