@@ -1,3 +1,3 @@
-module example/generics
+module generic
 
-go 1.17
+go 1.18

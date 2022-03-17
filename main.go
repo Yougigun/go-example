@@ -1,39 +1,28 @@
 package main
 
 import (
-	"encoding/json"
+	// "encoding/json"
 	"fmt"
-	"regexp"
 )
 
 // "fmt"
 // "regexp"
 
 func main() {
-	re := RegrexTest{}
-	err := json.Unmarshal([]byte(`{"regrex":{"hahaha":"fffffff"},"others":"others"}`), &re)
-	fmt.Println(err)
-	fmt.Println(re)
+	a := A{}
+	fmt.Println(a.Add(1))
 }
 
-type RegrexTest struct {
-	Regrex map[string]reString `json:"regrex,omitempty"`
-	Others string   `json:"others"`
+type A struct {
+	B
 }
 
-type reString string
+type B struct {
+}
 
-func (t *reString) UnmarshalJSON(bs []byte) error {
-	var tt string
-	var err error
-	err = json.Unmarshal(bs, &tt)
-	if err != nil {
-		return err
-	}
-	_, err = regexp.Compile(tt)
-	if err != nil {
-		return err
-	}
-	*t = reString(tt)
-	return nil
+func (b B) Add(x int) (y int) {
+	return x + 1
+}
+func (b A) Add(x int) (y int) {
+	return x + 100
 }
