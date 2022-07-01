@@ -48,7 +48,11 @@ is_admin {
 			"groups": []interface{}{"sales", "marketing"},
 		},
 	}
-
+	defer func(){
+		if r := recover();r!=nil{
+			fmt.Println(r)
+		}
+	}()
 	results, err := query.Eval(ctx, rego.EvalInput(input))
 	if err != nil {
 		// Handle evaluation error.
