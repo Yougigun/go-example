@@ -9,5 +9,5 @@ import (
 func main() {
 	sv, err := semver.NewVersion("")
 	// sv2, _ := semver.NewVersion("2")
-	fmt.Println(sv,err,"xxx yyy"=="xxx yyy")
+	fmt.Println(sv, err, "xxx yyy" == "xxx yyy")
 }

@@ -42,5 +42,7 @@ func main() {
         if ua.URL != "" {
             fmt.Println(ua.URL)
         }
+        fmt.Println("version: ", ua.OSVersion)
+        fmt.Println("os version: ", ua.Version)
     }
 }
